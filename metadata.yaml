@@ -15,5 +15,5 @@
 homepage: "https://browsee.io"
 documentation: "https://docs.browsee.io/integration/gtm-integration"
 versions:
-  - sha: 62d24800c5e87137924b4c644f6cbd23bf9fcd49
+  - sha: 9dc3f69de7ff5c5d41a65de9b0c73b1d365132c7
     changeNotes: Initial Version
