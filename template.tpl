@@ -5,6 +5,7 @@ Template Gallery Developer Terms of Service available at
 https://developers.google.com/tag-manager/gallery-tos (or such other URL as
 Google may provide), as modified from time to time.
 
+
 ___INFO___
 
 {
@@ -43,20 +44,17 @@ ___TEMPLATE_PARAMETERS___
 
 ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 
-// Enter your template code here.
 const log = require('logToConsole');
-const copyFromWindow = require('copyFromWindow');
-const setInWindow = require('setInWindow');
 const injectScript = require('injectScript');
+const createArgumentsQueue = require('createArgumentsQueue');
 
 log('data =', data);
-var _browsee = copyFromWindow('_browsee') || function () { (_browsee.q = _browsee.q || []).push(arguments); };
+var _browsee = createArgumentsQueue('_browsee', '_browsee.q');
+
 _browsee('init', data.projectKey);
-setInWindow('_browsee', _browsee);
 
 // Call data.gtmOnSuccess when the tag is finished.
 injectScript('https://cdn.browsee.io/js/browsee.min.js', data.gtmOnSuccess,data.gtmOnFailure);
-
 
 
 ___WEB_PERMISSIONS___
@@ -130,6 +128,45 @@ ___WEB_PERMISSIONS___
                     "boolean": true
                   }
                 ]
+              },
+              {
+                "type": 3,
+                "mapKey": [
+                  {
+                    "type": 1,
+                    "string": "key"
+                  },
+                  {
+                    "type": 1,
+                    "string": "read"
+                  },
+                  {
+                    "type": 1,
+                    "string": "write"
+                  },
+                  {
+                    "type": 1,
+                    "string": "execute"
+                  }
+                ],
+                "mapValue": [
+                  {
+                    "type": 1,
+                    "string": "_browsee.q"
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  },
+                  {
+                    "type": 8,
+                    "boolean": false
+                  }
+                ]
               }
             ]
           }
@@ -184,6 +221,6 @@ scenarios:
 
 ___NOTES___
 
-Created on 10/11/2019, 17:29:36
+Created on 16/11/2019, 17:52:33
 
 
