@@ -13,7 +13,7 @@
 # limitations under the License.
 
 homepage: "https://browsee.io"
-documentation: "https://docs.browsee.io/integration/gtm-integration"
+documentation: "https://docs.browsee.io/integration/snippet-integration/gtm-integration"
 versions:
   - sha: bc119d8fbb7c3a14e07a82ec55fa531832e58a05
     changeNotes: Initial Version
